@@ -8,7 +8,7 @@ import jakarta.inject.Singleton
 
 @Singleton
 class UserServiceImpl(
-    private val userRepository: UserRepository, private val jwtUtil: JwtUtil
+    private val userRepository: UserRepository
 ) : UserService {
 
     override fun getAllUsers(): List<UserResponseDTO> {
