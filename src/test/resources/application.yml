@@ -4,3 +4,11 @@ jpa:
       hibernate:
         hbm2ddl:
           auto: none
+
+
+test-resources:
+  containers:
+    enabled: false
+    mariadb:
+      image-name: mariadb:10.3
+

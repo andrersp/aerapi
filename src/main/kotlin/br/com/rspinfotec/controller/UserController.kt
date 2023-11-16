@@ -13,8 +13,7 @@ import io.swagger.v3.oas.annotations.tags.Tag
 @Validated
 class UserController(
     private val userService: UserService,
-
-    ) {
+) {
 
     @Get
     @Operation(summary = "get all users", description = "get all users data")
