@@ -6,14 +6,16 @@ micronaut:
       - pattern: /swagger*/**
         access:
           - isAnonymous()
-      - pattern: /v1/login
-        access:
-          - isAnonymous()
       - pattern: /**
         access:
           - isAuthenticated()
     enabled: true
     authentication: bearer
+    endpoints:
+      login:
+        enabled: false
+      logout:
+        enabled: false
 
   router:
     static-resources:

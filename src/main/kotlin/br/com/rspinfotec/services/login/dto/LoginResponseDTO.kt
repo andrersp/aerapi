@@ -1,4 +1,4 @@
-package br.com.rspinfotec.user.dto
+package br.com.rspinfotec.services.login.dto
 
 import io.micronaut.serde.annotation.Serdeable
 import io.swagger.v3.oas.annotations.media.Schema
@@ -11,5 +11,4 @@ data class LoginResponseDTO(
     val tokenType: String = "Bearer",
     @Schema(example = "iLCJpZCI6MTB9.8NmwhbVCwhRL52LCbL5KIwmIdLtkHd0iXKPT1yQi8BU")
     val accessToken: String
-
 )

@@ -3,6 +3,7 @@ package br.com.rspinfotec.shared.security
 import com.nimbusds.jose.JWSAlgorithm
 import com.nimbusds.jose.JWSHeader
 import com.nimbusds.jose.crypto.MACSigner
+import com.nimbusds.jose.crypto.MACVerifier
 import com.nimbusds.jwt.JWTClaimsSet
 import com.nimbusds.jwt.SignedJWT
 import io.micronaut.context.annotation.Value
@@ -27,5 +28,13 @@ class JwtUtil {
         val signedJWT = SignedJWT(JWSHeader(JWSAlgorithm.HS256), claims)
         signedJWT.sign(signer)
         return signedJWT.serialize()
+    }
+
+    fun validateJwtToken(accessToken: String): String {
+        val jwt = SignedJWT.parse(accessToken)
+        val verify = MACVerifier(jwtSecret.toByteArray())
+        if (!jwt.verify(verify)) throw Exception("Token Invalido")
+        val claims = jwt.jwtClaimsSet
+        return claims.getClaim("userName").toString()
     }
 }

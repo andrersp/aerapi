@@ -1,4 +1,4 @@
-package br.com.rspinfotec.user
+package br.com.rspinfotec.entity
 
 import jakarta.persistence.*
 import org.hibernate.annotations.CreationTimestamp
