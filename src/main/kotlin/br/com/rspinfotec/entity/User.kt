@@ -14,7 +14,7 @@ data class User(
     @Column(name = "username")
     val userName: String,
 
-    val password: String,
+    var password: String,
 
     @CreationTimestamp
     @Column(columnDefinition = "WITH TIME ZONE")

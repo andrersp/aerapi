@@ -1,4 +1,4 @@
-package br.com.rspinfotec.services.user.dto
+package br.com.rspinfotec.controller.user.dto
 
 import br.com.rspinfotec.entity.User
 import io.micronaut.serde.annotation.Serdeable

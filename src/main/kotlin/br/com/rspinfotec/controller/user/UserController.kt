@@ -1,5 +1,6 @@
-package br.com.rspinfotec.controller
+package br.com.rspinfotec.controller.user
 
+import br.com.rspinfotec.controller.user.dto.UserResponseDTO
 import br.com.rspinfotec.services.user.UserService
 import io.micronaut.http.annotation.Controller
 import io.micronaut.http.annotation.Get
@@ -17,6 +18,9 @@ class UserController(
 
     @Get
     @Operation(summary = "get all users", description = "get all users data")
-    fun getAllUsers() = userService.getAllUsers()
+    fun getAllUsers(): List<UserResponseDTO> {
+        val users = userService.getAllUsers()
+        return users.map { UserResponseDTO.fromDomain(it) }
+    }
 
 }

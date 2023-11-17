@@ -1,8 +1,8 @@
-package br.com.rspinfotec.controller
+package br.com.rspinfotec.controller.login
 
+import br.com.rspinfotec.controller.login.dto.LoginRequestDTO
+import br.com.rspinfotec.controller.login.dto.LoginResponseDTO
 import br.com.rspinfotec.services.login.LoginService
-import br.com.rspinfotec.services.login.dto.LoginRequestDTO
-import br.com.rspinfotec.services.login.dto.LoginResponseDTO
 import io.micronaut.http.annotation.Body
 import io.micronaut.http.annotation.Controller
 import io.micronaut.http.annotation.Post
@@ -21,6 +21,14 @@ class LoginController(private val loginService: LoginService) {
 
     @Post
     @Operation(summary = "login", description = "endpoint login")
-    fun login(@Valid @Body payload: LoginRequestDTO): LoginResponseDTO = loginService.login(payload)
+    fun login(@Valid @Body payload: LoginRequestDTO): LoginResponseDTO {
+
+        val accessToken = loginService.login(payload.userName, payload.password)
+        return LoginResponseDTO(
+            accessToken = accessToken
+        )
+
+
+    }
 
 }

@@ -1,4 +1,4 @@
-package br.com.rspinfotec.services.login.dto
+package br.com.rspinfotec.controller.login.dto
 
 import io.micronaut.serde.annotation.Serdeable
 import io.swagger.v3.oas.annotations.media.Schema
