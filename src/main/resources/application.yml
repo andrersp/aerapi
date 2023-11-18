@@ -1,6 +1,10 @@
 micronaut:
   application:
     name: azulerosa
+  serde:
+    serialization:
+      inclusion: NON_ABSENT
+
   security:
     intercept-url-map:
       - pattern: /swagger*/**

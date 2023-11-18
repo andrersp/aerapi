@@ -1,9 +1,11 @@
-package br.com.rspinfotec.controller.user.dto
+package br.com.rspinfotec.dtos.user
 
+import io.micronaut.serde.annotation.Serdeable.Deserializable
 import io.swagger.v3.oas.annotations.media.Schema
 import jakarta.validation.constraints.NotEmpty
 import jakarta.validation.constraints.Size
 
+@Deserializable
 data class UserRequestDTO(
     @Schema(example = "username")
     @field:NotEmpty

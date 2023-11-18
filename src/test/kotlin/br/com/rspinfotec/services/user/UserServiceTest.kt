@@ -2,9 +2,9 @@ package br.com.rspinfotec.services.user
 
 import br.com.rspinfotec.constants.UsersContants.USERS
 import br.com.rspinfotec.constants.UsersContants.USER_1
+import br.com.rspinfotec.constants.UsersContants.USER_PAYLOAD
 import br.com.rspinfotec.repository.UserRepository
-import br.com.rspinfotec.controller.user.dto.UserRequestDTO
-import br.com.rspinfotec.shared.security.exceptions.ApiException
+import br.com.rspinfotec.shared.exceptions.ApiException
 import io.micronaut.test.annotation.MockBean
 import io.micronaut.test.extensions.junit5.annotation.MicronautTest
 import org.assertj.core.api.Assertions.assertThat
@@ -46,14 +46,14 @@ class UserServiceTest(
     @Test
     fun testCreateUserReturnSuccess() {
         `when`(userRepository.save(USER_1)).thenReturn(USER_1)
-        val sut = userService.createUser(USER_1)
-        assertThat(sut).isEqualTo(USER_1)
+        val sut = userService.createUser(USER_PAYLOAD)
+        assertThat(sut.userName).isEqualTo(USER_1.userName)
     }
 
     @Test
-    fun testCreateUserReturnApiException(){
+    fun testCreateUserReturnApiException() {
         `when`(userRepository.findByUserName(USER_1.userName)).thenReturn(USER_1)
-        assertThatThrownBy {userService.createUser(USER_1) }.isInstanceOf(ApiException::class.java)
+        assertThatThrownBy { userService.createUser(USER_PAYLOAD) }.isInstanceOf(ApiException::class.java)
     }
 
 
