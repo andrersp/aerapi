@@ -1,5 +1,7 @@
 package br.com.rspinfotec.shared.security
 
+import br.com.rspinfotec.shared.exceptions.ApiError
+import br.com.rspinfotec.shared.exceptions.ApiException
 import com.nimbusds.jose.JWSAlgorithm
 import com.nimbusds.jose.JWSHeader
 import com.nimbusds.jose.crypto.MACSigner
@@ -10,7 +12,7 @@ import io.micronaut.context.annotation.Value
 import jakarta.inject.Singleton
 import java.time.Instant
 import java.time.temporal.ChronoUnit
-import java.util.Date
+import java.util.*
 
 @Singleton
 class JwtUtil {
@@ -31,9 +33,16 @@ class JwtUtil {
     }
 
     fun validateJwtToken(accessToken: String): String {
-        val jwt = SignedJWT.parse(accessToken)
+
+        val jwt: SignedJWT
+        try {
+            jwt = SignedJWT.parse(accessToken)
+        } catch (_: Exception) {
+            throw ApiException(ApiError.INVALID_TOKEN, 401)
+        }
+
         val verify = MACVerifier(jwtSecret.toByteArray())
-        if (!jwt.verify(verify)) throw Exception("Token Invalido")
+        if (!jwt.verify(verify)) throw ApiException(ApiError.INVALID_TOKEN, 401)
         val claims = jwt.jwtClaimsSet
         return claims.getClaim("userName").toString()
     }
