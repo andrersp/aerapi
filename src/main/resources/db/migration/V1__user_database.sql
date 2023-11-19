@@ -1,5 +1,5 @@
 CREATE TABLE users (
- id SERIAL primary key not null,
+ id BIGSERIAL primary key not null,
  username varchar(100) not null,
  password varchar(255) not null,
  create_on TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
