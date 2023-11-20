@@ -48,17 +48,16 @@ class CustomerServiceImpl(
 
             }
         }
-
+        
         customer.name = payload.name
         customer.phone = payload.phone
         customer.obs = payload.obs
-        customerRepository.save(customer)
+        customerRepository.merge(customer)
         return CustomerResponseDTO.fromEntity(customer)
     }
 
     private fun getCustomerById(customerId: Long): Customer =
         customerRepository.findById(customerId)
             .orElseThrow { ApiException(ApiError.REGISTRY_NOT_FOUND, "customer not found") }
-
 
 }

@@ -17,6 +17,7 @@ import org.mockito.Mockito.mock
 import org.mockito.Mockito.`when`
 import java.util.*
 
+
 @MicronautTest
 class CustomerServiceTest(
     private val customerService: CustomerService,
@@ -88,7 +89,6 @@ class CustomerServiceTest(
             phone = CUSTOMER_1.phone,
             obs = ""
         )
-
         assertThatThrownBy { customerService.editCustomer(2L, payload) }.isInstanceOf(ApiException::class.java)
 
 

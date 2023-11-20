@@ -34,4 +34,9 @@ class CustomerController(
     @Get("/{customerId}")
     @Operation(summary = "Customer detail", description = "Get customer detail by id")
     fun getById(@PathVariable customerId: Long): CustomerResponseDTO = customerService.getById(customerId)
+
+    @Put("/{customerId}")
+    @Operation(summary = "Update customer", description = "update customer data")
+    fun updateCustomer(@PathVariable customerId: Long, @Valid @Body payload: CustomerRequestDTO): CustomerResponseDTO =
+        customerService.editCustomer(customerId, payload)
 }
