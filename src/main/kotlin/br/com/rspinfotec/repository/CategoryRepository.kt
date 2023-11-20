@@ -6,4 +6,6 @@ import io.micronaut.data.jpa.repository.JpaRepository
 
 @Repository
 interface CategoryRepository : JpaRepository<Category, Int> {
+
+    fun findByName(name: String): Category?
 }
