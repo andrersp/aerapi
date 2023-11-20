@@ -1,6 +1,6 @@
 CREATE TABLE categories (
  id SERIAL primary key not null,
- name varchar(100) not null
+ name varchar(100) not null unique
 );
 
 INSERT INTO categories(name) VALUES

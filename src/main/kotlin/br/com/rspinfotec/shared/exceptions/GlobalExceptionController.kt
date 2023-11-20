@@ -29,14 +29,14 @@ class GlobalExceptionController {
         return HttpResponse.serverError(err).status(HttpStatus.UNPROCESSABLE_ENTITY)
     }
 
-//    @Error(global = true)
-//    fun handlerGlobalError(
-//        request: HttpRequest<*>,
-//        exc: Exception
-//    ): HttpResponse<ApiErrorMessage> {
-//        val err = ApiError.getErrorMessageException(ApiError.GENERIC_ERROR)
-//        return HttpResponse.serverError(err).status(HttpStatus.BAD_REQUEST)
-//    }
+    @Error(global = true)
+    fun handlerGlobalError(
+        request: HttpRequest<*>,
+        exc: Exception
+    ): HttpResponse<ApiErrorMessage> {
+        val err = ApiError.getErrorMessageException(ApiError.GENERIC_ERROR)
+        return HttpResponse.serverError(err).status(HttpStatus.BAD_REQUEST)
+    }
 
 
 }
