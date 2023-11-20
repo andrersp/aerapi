@@ -18,7 +18,6 @@ import org.mockito.Mockito.`when`
 import java.util.*
 
 @MicronautTest(startApplication = false)
-
 class CategoryServiceTest(
     private val categoryService: CategoryService, private val categoryRepository: CategoryRepository
 ) {

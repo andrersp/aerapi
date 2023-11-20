@@ -18,7 +18,7 @@ import org.mockito.Mockito.`when`
 import java.util.*
 
 
-@MicronautTest
+@MicronautTest(startApplication = false)
 class CustomerServiceTest(
     private val customerService: CustomerService,
     private val customerRepository: CustomerRepository
@@ -27,7 +27,6 @@ class CustomerServiceTest(
     @MockBean(CustomerRepository::class)
     fun customerRepository(): CustomerRepository =
         mock(CustomerRepository::class.java)
-
 
     @Test
     fun testCreateCustomerReturnSuccess() {

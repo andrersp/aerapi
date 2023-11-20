@@ -14,7 +14,7 @@ import org.junit.jupiter.api.Test
 import org.mockito.Mockito.mock
 import org.mockito.Mockito.`when`
 
-@MicronautTest
+@MicronautTest(startApplication = false)
 class UserServiceTest(
     private val userService: UserService,
     private val userRepository: UserRepository

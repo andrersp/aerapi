@@ -3,7 +3,7 @@ micronaut:
     name: azulerosa
   serde:
     serialization:
-      inclusion: NON_ABSENT
+      inclusion: ALWAYS
 
   security:
     intercept-url-map:

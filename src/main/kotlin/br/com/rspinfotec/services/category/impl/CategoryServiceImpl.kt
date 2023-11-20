@@ -27,6 +27,7 @@ class CategoryServiceImpl(
     }
 
     override fun list(): List<CategoryResponseDTO> {
+
         val categories = categoryRepository.findAll()
         return categories.map { category ->
             CategoryResponseDTO(
