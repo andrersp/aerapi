@@ -6,15 +6,14 @@ import jakarta.validation.constraints.NotEmpty
 
 @Serdeable
 data class CustomerRequestDTO(
-    @Schema(example = "Full customer name")
+    @field:Schema(example = "Full customer name")
     @field:NotEmpty
     val name: String,
 
-    @Schema(example = "01345678901")
+    @field:Schema(example = "01345678901")
     @field:NotEmpty
     val phone: String,
 
-    @Schema(example = "Free text about customer")
-    @field:NotEmpty
+    @field:Schema(example = "Free text about customer")
     val obs: String
 )

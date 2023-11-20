@@ -11,11 +11,11 @@ data class Customer(
     val id: Long = 0,
 
     @Column(nullable = false, length = 255)
-    val name: String,
+    var name: String,
 
     @Column(nullable = false, length = 14, unique = true)
-    val phone: String,
+    var phone: String,
 
     @Column(length = 255)
-    val obs: String
+    var obs: String
 )

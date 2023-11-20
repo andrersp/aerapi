@@ -30,5 +30,35 @@ class CustomerServiceImpl(
         return customers.map { CustomerResponseDTO.fromEntity(it) }
     }
 
+    override fun getById(customerId: Long): CustomerResponseDTO {
+        val customer = getCustomerById(customerId)
+        return CustomerResponseDTO.fromEntity(customer)
+
+    }
+
+    override fun editCustomer(customerId: Long, payload: CustomerRequestDTO): CustomerResponseDTO {
+        val customer = getCustomerById(customerId)
+        val customerPhone = customerRepository.findByPhone(payload.phone)
+        if (customerPhone != null) {
+            if (customerPhone.id != customer.id) {
+                throw ApiException(
+                    ApiError.DUPLICATE_REGISTRY,
+                    "telephone number for another customer"
+                )
+
+            }
+        }
+
+        customer.name = payload.name
+        customer.phone = payload.phone
+        customer.obs = payload.obs
+        customerRepository.save(customer)
+        return CustomerResponseDTO.fromEntity(customer)
+    }
+
+    private fun getCustomerById(customerId: Long): Customer =
+        customerRepository.findById(customerId)
+            .orElseThrow { ApiException(ApiError.REGISTRY_NOT_FOUND, "customer not found") }
+
 
 }

@@ -6,19 +6,26 @@ import br.com.rspinfotec.entity.Customer
 object CustomerConstants {
 
     val CUSTOMER_PAYLOAD = CustomerRequestDTO(
-        name = "client test",
+        name = "Customer 1",
         phone = "012345678901",
         obs = ""
     )
 
     val CUSTOMER_1 = Customer(
         id = 1L,
-        name = "client test",
+        name = "Customer 1",
         phone = "012345678901",
         obs = ""
     )
 
-    val CUSTOMERS = listOf(CUSTOMER_1)
+    val CUSTOMER_2 = Customer(
+        id = 2L,
+        name = "Customer 2",
+        phone = "1234567890",
+        obs = ""
+    )
+
+    val CUSTOMERS = listOf(CUSTOMER_1, CUSTOMER_2)
 
 
 }
