@@ -10,5 +10,8 @@ data class Category(
     val id: Int = 0,
 
     @Column(nullable = false, length = 100, unique = true)
-    var name: String
+    var name: String,
+
+    @OneToMany(mappedBy = "category", orphanRemoval = false, fetch = FetchType.LAZY)
+    var products: MutableList<Product> = mutableListOf()
 )
