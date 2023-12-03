@@ -1,4 +1,4 @@
-package br.com.rspinfotec.entity
+package br.com.rspinfotec.domain.user
 
 import jakarta.persistence.*
 import org.hibernate.annotations.CreationTimestamp
@@ -21,7 +21,6 @@ data class User(
     val createOn: LocalDateTime? = null,
 
     val enable: Boolean = true
-
 
 
 )

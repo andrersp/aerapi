@@ -1,7 +1,7 @@
 package br.com.rspinfotec.constants
 
+import br.com.rspinfotec.domain.Category
 import br.com.rspinfotec.dtos.category.CategoryRequestDTO
-import br.com.rspinfotec.entity.Category
 
 object CategoryConstants {
     val CATEGORY_PAYLOAD = CategoryRequestDTO(name = "caneca")

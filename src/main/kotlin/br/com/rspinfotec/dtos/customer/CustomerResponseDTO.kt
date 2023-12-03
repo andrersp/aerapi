@@ -1,6 +1,6 @@
 package br.com.rspinfotec.dtos.customer
 
-import br.com.rspinfotec.entity.Customer
+import br.com.rspinfotec.domain.Customer
 import io.micronaut.serde.annotation.Serdeable
 import io.swagger.v3.oas.annotations.media.Schema
 

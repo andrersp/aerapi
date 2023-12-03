@@ -1,7 +1,7 @@
 package br.com.rspinfotec.constants
 
+import br.com.rspinfotec.domain.Product
 import br.com.rspinfotec.dtos.product.ProductRequestDTO
-import br.com.rspinfotec.entity.Product
 
 object ProductConstants {
 

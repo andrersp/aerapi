@@ -1,6 +1,6 @@
 package br.com.rspinfotec.dtos.user
 
-import br.com.rspinfotec.entity.User
+import br.com.rspinfotec.domain.user.User
 import io.micronaut.serde.annotation.Serdeable
 
 @Serdeable

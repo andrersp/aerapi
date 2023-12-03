@@ -1,4 +1,4 @@
-package br.com.rspinfotec.entity
+package br.com.rspinfotec.domain
 
 import jakarta.persistence.*
 

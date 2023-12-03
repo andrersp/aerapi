@@ -1,9 +1,9 @@
 package br.com.rspinfotec.services.product.Impl
 
+import br.com.rspinfotec.domain.Product
 import br.com.rspinfotec.dtos.product.ProductDetailDTO
 import br.com.rspinfotec.dtos.product.ProductRequestDTO
 import br.com.rspinfotec.dtos.product.ProductResumeDTO
-import br.com.rspinfotec.entity.Product
 import br.com.rspinfotec.repository.CategoryRepository
 import br.com.rspinfotec.repository.ProductRepository
 import br.com.rspinfotec.services.product.ProductService

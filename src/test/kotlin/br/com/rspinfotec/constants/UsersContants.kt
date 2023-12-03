@@ -1,7 +1,7 @@
 package br.com.rspinfotec.constants
 
+import br.com.rspinfotec.domain.user.User
 import br.com.rspinfotec.dtos.user.UserRequestDTO
-import br.com.rspinfotec.entity.User
 
 object UsersContants {
     val USER_PAYLOAD = UserRequestDTO(userName = "testeUser", password = "admin")

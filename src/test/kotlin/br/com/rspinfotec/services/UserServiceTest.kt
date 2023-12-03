@@ -3,8 +3,8 @@ package br.com.rspinfotec.services
 import br.com.rspinfotec.constants.UsersContants.USERS
 import br.com.rspinfotec.constants.UsersContants.USER_1
 import br.com.rspinfotec.constants.UsersContants.USER_PAYLOAD
+import br.com.rspinfotec.domain.user.UserServicePort
 import br.com.rspinfotec.repository.UserRepository
-import br.com.rspinfotec.services.user.UserService
 import br.com.rspinfotec.shared.exceptions.ApiException
 import io.micronaut.test.annotation.MockBean
 import io.micronaut.test.extensions.junit5.annotation.MicronautTest
@@ -16,7 +16,7 @@ import org.mockito.Mockito.`when`
 
 @MicronautTest(startApplication = false)
 class UserServiceTest(
-    private val userService: UserService,
+    private val userService: UserServicePort,
     private val userRepository: UserRepository
 ) {
 

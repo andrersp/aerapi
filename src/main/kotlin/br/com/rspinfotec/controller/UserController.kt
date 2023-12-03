@@ -1,8 +1,8 @@
 package br.com.rspinfotec.controller
 
+import br.com.rspinfotec.domain.user.UserServicePort
 import br.com.rspinfotec.dtos.user.UserRequestDTO
 import br.com.rspinfotec.dtos.user.UserResponseDTO
-import br.com.rspinfotec.services.user.UserService
 import io.micronaut.http.HttpStatus
 import io.micronaut.http.annotation.*
 import io.micronaut.validation.Validated
@@ -14,7 +14,7 @@ import jakarta.validation.Valid
 @Tag(name = "User")
 @Validated
 class UserController(
-    private val userService: UserService,
+    private val userService: UserServicePort,
 ) {
 
     @Get

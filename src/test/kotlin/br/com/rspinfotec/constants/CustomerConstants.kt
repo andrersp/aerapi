@@ -1,7 +1,7 @@
 package br.com.rspinfotec.constants
 
+import br.com.rspinfotec.domain.Customer
 import br.com.rspinfotec.dtos.customer.CustomerRequestDTO
-import br.com.rspinfotec.entity.Customer
 
 object CustomerConstants {
 

@@ -1,9 +1,9 @@
-package br.com.rspinfotec.services.user
+package br.com.rspinfotec.domain.user
 
 import br.com.rspinfotec.dtos.user.UserRequestDTO
 import br.com.rspinfotec.dtos.user.UserResponseDTO
 
-interface UserService {
+interface UserServicePort {
     fun getAllUsers(): List<UserResponseDTO>
     fun getUserByUserName(userName: String): UserResponseDTO
 

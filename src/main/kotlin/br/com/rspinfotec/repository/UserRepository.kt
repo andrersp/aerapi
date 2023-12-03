@@ -1,6 +1,6 @@
 package br.com.rspinfotec.repository
 
-import br.com.rspinfotec.entity.User
+import br.com.rspinfotec.domain.user.User
 import io.micronaut.data.annotation.Repository
 import io.micronaut.data.jpa.repository.JpaRepository
 

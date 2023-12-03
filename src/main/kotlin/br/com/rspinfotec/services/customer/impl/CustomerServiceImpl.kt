@@ -1,8 +1,8 @@
 package br.com.rspinfotec.services.customer.impl
 
+import br.com.rspinfotec.domain.Customer
 import br.com.rspinfotec.dtos.customer.CustomerRequestDTO
 import br.com.rspinfotec.dtos.customer.CustomerResponseDTO
-import br.com.rspinfotec.entity.Customer
 import br.com.rspinfotec.repository.CustomerRepository
 import br.com.rspinfotec.services.customer.CustomerService
 import br.com.rspinfotec.shared.exceptions.ApiError
@@ -48,7 +48,7 @@ class CustomerServiceImpl(
 
             }
         }
-        
+
         customer.name = payload.name
         customer.phone = payload.phone
         customer.obs = payload.obs

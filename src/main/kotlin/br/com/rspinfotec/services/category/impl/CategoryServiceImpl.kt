@@ -1,8 +1,8 @@
 package br.com.rspinfotec.services.category.impl
 
+import br.com.rspinfotec.domain.Category
 import br.com.rspinfotec.dtos.category.CategoryRequestDTO
 import br.com.rspinfotec.dtos.category.CategoryResponseDTO
-import br.com.rspinfotec.entity.Category
 import br.com.rspinfotec.repository.CategoryRepository
 import br.com.rspinfotec.services.category.CategoryService
 import br.com.rspinfotec.shared.exceptions.ApiError
